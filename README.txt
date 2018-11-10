@@ -92,3 +92,18 @@ requirements:
   Address Families should match Protocol Families
   (PF_INET --> AF_INET and PF_UNIX --> AF_UNIX)
   
+Still learning github.  Been a week since I've done anything here due to work restrictions. (Elections are hell-week for Broadcast Engineers). 
+I have done some cross-training in yet another book. Whereas the previous book only had 10 or so pages dedicated to the topic of sockets, I'm working now in a book called "Linux Socket Programming By Example" / Warren Gay. 500+ page book. I've devoured 68 pages now. 
+
+While most of the code in the book compiles and runs, there has been at least one caveat:
+Around page 55 there is a section of code covering the .X25 Amateur Radio type. (Being an ex-ham, this held some interest for me).  It would seem that (at least in MY system) the X25 type WILL NOT CREATE A SOCKET. 
+
+MySocket=socket(AF_X25,SOCK_STREAM) //does nothing.
+MySocket=socket(AF_AX25,SOCK_STREAM) // creates a socket just fine. 
+
+With no other changes in the code, simply adding one letter (the A in AX_25) makes the code work where without it - it doesn't. 
+While I understand that AX25 is a completely different type, I'm not yet comprehending why one Amateur radio type works, and another doesn't.  
+
+I'll have to investigate that later on down the road when I know more about programming sockets.  I checked with some more experienced coders in IRC and on FB channels dealing with code - none of them seemed to have an answer.
+
+Back to the books.
